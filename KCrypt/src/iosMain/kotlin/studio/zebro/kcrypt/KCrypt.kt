@@ -190,7 +190,7 @@ class KCryptIos(
 
 var kCryptInstance: KCrypt? = null
 
-actual fun getKCrypt(): KCrypt =
-  kCryptInstance ?: KCryptIos(IosPlatformHelperImpl(), KeystoreManagerImpl()).apply {
+actual fun getKCrypt(iosKeychainGroupName: String?): KCrypt =
+  kCryptInstance ?: KCryptIos(IosPlatformHelperImpl(), KeystoreManagerImpl(iosKeychainGroupName)).apply {
     kCryptInstance = this
   }

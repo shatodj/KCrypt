@@ -57,7 +57,9 @@ interface KeystoreManager {
 }
 
 @OptIn(ExperimentalForeignApi::class)
-class KeystoreManagerImpl : KeystoreManager {
+class KeystoreManagerImpl(
+  private val keychainGroupName: String? = null,
+) : KeystoreManager {
 
   val serviceName: String = "studio.zebro.kcrypt"
 
@@ -153,7 +155,7 @@ class KeystoreManagerImpl : KeystoreManager {
   private fun <T> context(vararg values: Any?, block: Context.(List<CFTypeRef?>) -> T): T {
     val standard = mapOf(
       kSecAttrService to CFBridgingRetain(serviceName),
-      kSecAttrAccessGroup to CFBridgingRetain(null)
+      kSecAttrAccessGroup to CFBridgingRetain(keychainGroupName)
     )
     val custom = arrayOf(*values).map { CFBridgingRetain(it) }
     return block.invoke(Context(standard), custom).apply {
