@@ -38,4 +38,4 @@ interface KCrypt {
   fun getDouble(key: String): Double?
 }
 
-expect fun getKCrypt(iosKeychainGroupName: String? = null): KCrypt
+expect fun getKCrypt(): KCrypt

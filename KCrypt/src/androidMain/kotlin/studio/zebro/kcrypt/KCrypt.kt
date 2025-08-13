@@ -219,7 +219,7 @@ class KCryptAndroid(
 }
 
 var kCryptInstance: KCrypt? = null
-actual fun getKCrypt(iosKeychainGroupName: String?): KCrypt =
+actual fun getKCrypt(): KCrypt =
   kCryptInstance ?: KCryptAndroid(
     KeyStoreManagerImpl(), CipherProviderImpl(), StorageProviderImpl()
   ).apply {
