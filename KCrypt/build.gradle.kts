@@ -5,6 +5,7 @@ plugins {
   id("convention.publication")
   kotlin("plugin.serialization") version "1.9.0"
   id("com.google.devtools.ksp") version "1.9.10-1.0.13"
+  id("maven-publish")
 }
 
 kotlin {
@@ -90,3 +91,6 @@ android {
     minSdk = 26
   }
 }
+
+group = "studio.zebro.kcrypt"
+version = "0.1.0"
