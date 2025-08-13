@@ -2,7 +2,7 @@ plugins {
   kotlin("multiplatform")
   id("com.android.library")
   id("io.realm.kotlin") version "1.10.0"
-  id("convention.publication")
+  // id("convention.publication")
   kotlin("plugin.serialization") version "1.9.0"
   id("com.google.devtools.ksp") version "1.9.10-1.0.13"
   id("maven-publish")

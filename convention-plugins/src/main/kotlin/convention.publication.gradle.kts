@@ -10,11 +10,11 @@ plugins {
 }
 
 //// Stub secrets to let the project sync and build without the publication values set up
-ext["signing.keyId"] = null
-ext["signing.password"] = null
-ext["signing.secretKeyRingFile"] = null
-ext["ossrhUsername"] = null
-ext["ossrhPassword"] = null
+//ext["signing.keyId"] = null
+//ext["signing.password"] = null
+//ext["signing.secretKeyRingFile"] = null
+//ext["ossrhUsername"] = null
+//ext["ossrhPassword"] = null
 
 // Grabbing secrets from local.properties file or from environment variables, which could be used on CI
 val secretPropsFile = project.rootProject.file("local.properties")
